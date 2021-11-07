@@ -24,7 +24,7 @@ public class Sale{
 	
 	@ManyToOne
 	@JoinColumn(name = "seller_id")
-	private Seller Seller;
+	private Seller seller;
 	
 	public Sale() {
 		
@@ -32,13 +32,12 @@ public class Sale{
 
 	public Sale(Long id, Integer visited, Integer deals, Double amount, LocalDate date,
 			com.devsuperior.dsvendas.entities.Seller seller) {
-		super();
 		this.id = id;
 		this.visited = visited;
 		this.deals = deals;
 		this.amount = amount;
 		this.date = date;
-		Seller = seller;
+		this.seller = seller;
 	}
 
 	public Long getId() {
@@ -82,11 +81,11 @@ public class Sale{
 	}
 
 	public Seller getSeller() {
-		return Seller;
+		return seller;
 	}
 
 	public void setSeller(Seller seller) {
-		Seller = seller;
+		this.seller = seller;
 	}
 
 }
